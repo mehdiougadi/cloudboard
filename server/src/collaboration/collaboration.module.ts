@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { CollaborationGateway } from './collaboration/collaboration.gateway';
+import { CollaborationGateway } from './collaboration.gateway';
 
 @Module({
   providers: [CollaborationGateway],

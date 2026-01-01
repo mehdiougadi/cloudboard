@@ -4,5 +4,5 @@ export interface User {
   username: string;
   socketId: string;
   color: string;
-  cursorPosition: CursorPosition;
+  cursorPosition?: CursorPosition;
 }
