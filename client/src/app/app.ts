@@ -1,12 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
   imports: [RouterOutlet],
   templateUrl: './app.html',
 })
-export class AppComponent {
-  title = 'client';
+export class App {
+  protected readonly title = signal('client');
 }

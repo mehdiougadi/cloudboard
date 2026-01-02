@@ -1,9 +1,14 @@
-import { ApplicationConfig, provideAppInitializer } from '@angular/core';
+import { ApplicationConfig, provideBrowserGlobalErrorListeners, provideAppInitializer, } from '@angular/core';
 import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
-import { provideClientHydration } from '@angular/platform-browser';
+import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
+import { initializeServices } from './initializer';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes), provideClientHydration(), provideAppInitializer()]
+  providers: [
+    provideBrowserGlobalErrorListeners(),
+    provideRouter(routes), provideClientHydration(withEventReplay()),
+    provideAppInitializer(initializeServices),
+  ]
 };
